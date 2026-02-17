@@ -1,0 +1,95 @@
+/* ======================================================
+   STEP 3: DESKTOP STYLES (ABOVE 800px)
+   ====================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 25px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Hide hamburger and close icon on desktop */
+.hamburger,
+.close-btn {
+  display: none;
+}
+/* ======================================================
+   STEP 4: MOBILE STYLES (BELOW 800px)
+   ====================================================== */
+
+@media (max-width: 800px) {
+
+  /* Show hamburger icon */
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+  /* Hide menu initially */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    transition: left 0.3s ease-in-out;
+  }
+
+  /* Slide menu from left */
+  .nav-links.active {
+    left: 0;
+  }
+
+  /* Menu items spacing */
+  .nav-links li {
+    margin: 18px 0;
+    text-align: center;
+  }
+
+  /* Close button */
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 28px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
