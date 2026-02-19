@@ -1,17 +1,15 @@
-const hamburger = document.getElementById("hamburger");
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
 const navLinks = document.getElementById("navLinks");
-const closeBtn = document.getElementById("closeBtn");
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.add("active");
+openMenu.addEventListener("click", () => {
+    navLinks.classList.add("active");
+    openMenu.style.display = "none";
+    closeMenu.style.display = "block";
 });
 
-closeBtn.addEventListener("click", () => {
-  navLinks.classList.remove("active");
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 800) {
+closeMenu.addEventListener("click", () => {
     navLinks.classList.remove("active");
-  }
+    closeMenu.style.display = "none";
+    openMenu.style.display = "block";
 });
